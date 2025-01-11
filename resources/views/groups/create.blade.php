@@ -7,7 +7,7 @@
         <h2>Create New Group</h2>
     </div>
     <div class="col-md-6 text-right">
-        <a href="{{ url('groups') }}" class="btn-sm btn-info"><i class="fa fa-minus"></i> BACK</a>
+        <a href="{{ url('groups') }}" class="btn-sm btn-warning"><i class="fa fa-minus"></i> BACK</a>
     </div>
 </div>
 <div class="card shadow mb-4">

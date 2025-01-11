@@ -14,13 +14,14 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', function(){
+    echo "Hello World!";
+});
 
 Route::get('groups', [UserGroupsController::class, 'index']);
 Route::get('groups/create', [UserGroupsController::class, 'create']);
 Route::post('groups', [UserGroupsController::class, 'store']);
 Route::delete('groups/{id}', [UserGroupsController::class, 'destroy']);
 
-
-
-Route::get('users', [UsersController::class, 'index']);
+Route::resource('users', UsersController::class,['except' => ['show']]);
 

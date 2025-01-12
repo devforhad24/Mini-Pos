@@ -46,6 +46,13 @@ class UsersController extends Controller
         return redirect()->to('users');
     }
 
+    /* single show user */
+    public function show($id){
+        $this->data['user'] = User::findOrFail($id);
+
+        return view('users.show', $this->data);
+    }
+
     /**
      * Show the form for editing the specified resource.
      */

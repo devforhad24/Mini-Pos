@@ -4,17 +4,17 @@
 
 <div class="row clearfix page_header">
     <div class="col-md-6">
-        <h2>User List</h2>
+        <h2>Category List</h2>
     </div>
     <div class="col-md-6 text-right">
-        <a href="{{ url('users/create') }}" class="btn-sm btn-info"><i class="fa fa-plus"></i> New User</a>
+        <a href="{{ route('categories.create') }}" class="btn-sm btn-info"><i class="fa fa-plus"></i> New Category</a>
     </div>
 </div>
 
 {{-- data table --}}
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Users</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Categories</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -22,40 +22,27 @@
                 <thead>
                     <tr>
                         <th>SL No.</th>
-                        <th>Group</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Address</th>
+                        <th>Category Name</th>
                         <th class="text-right">Actions</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
                         <th>SL No.</th>
-                        <th>Group</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Address</th>
+                        <th>Category Name</th>
                         <th class="text-right">Actions</th>
                     </tr>
                 </tfoot>
                 <tbody>
-                    @foreach ($users as $key=> $user)
+                    @foreach ($categories as $key=> $category)
                     <tr>
                         <td>{{ $key+1 }}</td>
-                        <td><span class="badge badge-danger">{{ $user->group->title }}</span></td>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ $user->phone }}</td>
-                        <td>{{ $user->address }}</td>
+                        <td>{{ $category->title }}</td>
                         <td class="text-right">
                             
-                            <form action="{{ route('users.destroy', ['user' => $user->id]) }}" method="POST">
+                            <form action="{{ route('categories.destroy', ['category' => $category->id]) }}" method="POST">
                                 {{-- just for design --}}
-                                <a class="btn-sm btn btn-warning" href="{{ route('users.show', ['user' => $user->id]) }}"><i class="fa fa-eye"></i></a>
-                                <a class="btn-sm btn btn-success" href="{{ route('users.edit', ['user' => $user->id]) }}"><i class="fa fa-edit"></i></a>
+                                <a class="btn-sm btn btn-success" href="{{ route('categories.edit', ['category' => $category->id]) }}"><i class="fa fa-edit"></i></a>
                                 {{-- ends --}}
                                 @csrf
                                 @method('DELETE')

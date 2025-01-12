@@ -227,7 +227,7 @@
                 <div class="container-fluid">
                     
                     @if(session('message'))
-                    <div class="alert alert-primary" role="alert">
+                    <div class="alert alert-success" role="alert">
                         {{ session('message') }}
                     </div>
                     @endif

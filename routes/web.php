@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\UserGroupsController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
@@ -14,14 +15,15 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', function(){
+/* Route::get('/', function(){
     echo "Hello World!";
-});
+}); */
 
 Route::get('groups', [UserGroupsController::class, 'index']);
 Route::get('groups/create', [UserGroupsController::class, 'create']);
 Route::post('groups', [UserGroupsController::class, 'store']);
 Route::delete('groups/{id}', [UserGroupsController::class, 'destroy']);
 
-Route::resource('users', UsersController::class,['except' => ['show']]);
+Route::resource('users', UsersController::class);
 
+Route::resource('categories', CategoriesController::class, ['except' => ['show']]);

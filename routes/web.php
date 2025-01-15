@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UserGroupsController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
@@ -27,3 +28,5 @@ Route::delete('groups/{id}', [UserGroupsController::class, 'destroy']);
 Route::resource('users', UsersController::class);
 
 Route::resource('categories', CategoriesController::class, ['except' => ['show']]);
+
+Route::resource('products', ProductsController::class);

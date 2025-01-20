@@ -49,6 +49,7 @@ class UsersController extends Controller
     /* single show user */
     public function show($id){
         $this->data['user'] = User::findOrFail($id);
+        $this->data['tab_menu'] = 'user_info';
 
         return view('users.show', $this->data);
     }

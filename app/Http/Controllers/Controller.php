@@ -13,4 +13,9 @@ class Controller extends BaseController
     // Define Variable
     public $data = [];
 
+    public function __construct()
+    {
+        $this->data['tab_menu'] = '';
+    }
+
 }

@@ -45,7 +45,7 @@
                     @foreach ($users as $key=> $user)
                     <tr>
                         <td>{{ $key+1 }}</td>
-                        <td><span class="badge badge-danger">{{ $user->group->title }}</span></td>
+                        <td><span class="badge badge-danger">{{ optional($user->group)->title }}</span></td>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->phone }}</td>

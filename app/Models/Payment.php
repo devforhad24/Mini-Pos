@@ -10,8 +10,12 @@ class Payment extends Model
         'date',
         'amount',
         'note',
-        'user_id'
+        'user_id',
+        'admin_id'
     ];
 
+    public function admin(){
+        return $this->belongsTo(Admin::class);
+    }
     
 }

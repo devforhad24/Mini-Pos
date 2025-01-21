@@ -22,7 +22,7 @@
                 <table class="table table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Customer</th>
+                            <th>Admin</th>
                             <th>Date</th>
                             <th>Total</th>
                             <th>Note</th>
@@ -39,7 +39,7 @@
                     <tbody>
                         @foreach ($user->payments as $payment)
                             <tr>
-                                <td>{{ $user->name }}</td>
+                                <td>{{ optional($payment->admin)->name }}</td>
                                 <td>{{ $payment->date }}</td>
                                 <td>{{ $payment->amount }}</td>
                                 <td>{{ $payment->note }}</td>
